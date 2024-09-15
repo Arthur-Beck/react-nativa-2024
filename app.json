@@ -2,6 +2,8 @@
   "expo": {
     "name": "react-nativa-2024",
     "slug": "react-nativa-2024",
+      "scheme": "react-nativa-2024",
+    
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -21,7 +23,11 @@
       }
     },
     "web": {
-      "favicon": "./src/assets/favicon.png"
-    }
+      "favicon": "./src/assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
