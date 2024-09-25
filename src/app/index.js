@@ -19,14 +19,14 @@ export default function App() {
   const [password, setPassword] = useState("A123456a!");
   const [passwordVisibility, setPasswordVisibility] = useState(false);
 
-  const tooglePasswordVisibility = () => {
+  const togglePasswordVisibility = () => {
     setPasswordVisibility(!passwordVisibility);
   };
 
   const handleEntrarSuper = async () => {
     try {
       await signIn({ email, password });
-      // router.replace("/");
+      
     } catch (error) {
       Alert.alert("Erro", error.message); 
       console.log(error);
@@ -35,23 +35,25 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Aplicativo Pronto para Usar😊😊</Text>
+      <Text style={styles.title}>Aplicativo Pronto para Usar</Text>
 
       <View style={styles.inputbox}>
-        <Ionicons name="mail-open-outline" size={20} color="black" />
+        <Ionicons name="mail-open-outline" size={20} color="purple" />
         <TextInput
           style={styles.emailinput}
           placeholder="E-mail"
+          placeholderTextColor="purple"
           value={email}
           onChangeText={setEmail}
         />
       </View>
 
       <View style={styles.inputbox}>
-        <Ionicons name="lock-closed-outline" size={20} color="black" />
+        <Ionicons name="lock-closed-outline" size={20} color="purple" />
         <TextInput
           style={styles.emailinput}
           placeholder="Senha"
+          placeholderTextColor="purple"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={passwordVisibility}
@@ -59,18 +61,19 @@ export default function App() {
         <Ionicons
           name={passwordVisibility ? "eye-off-outline" : "eye-outline"}
           size={20}
-          color="black"
-          onPress={tooglePasswordVisibility}
+          color="purple"
+          onPress={togglePasswordVisibility}
         />
       </View>
 
       <Button
-        style={styles.button}
+        color="green"
         title="Entrar"
         onPress={handleEntrarSuper}
       />
-      <Button title="Sobre" onPress={() => router.push("/about")} />
+      <Button color="green" title="Sobre" onPress={() => router.push("/about")} />
       <Button 
+        color="green"
         title="Sair do Aplicativo"
         onPress={() => BackHandler.exitApp()}
       />
@@ -82,14 +85,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000", 
     alignItems: "center",
-    justifyContent: "center",     
+    justifyContent: "center",
     gap: 15,
   },
   title: {
     fontFamily: "bold",
     fontSize: 20,
+    color: "purple", 
   },
   inputbox: {
     flexDirection: "row",
@@ -102,6 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "regular",
     fontSize: 20,
+    color: "purple", 
   },
   button: {
     width: "100%",

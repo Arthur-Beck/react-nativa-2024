@@ -23,9 +23,9 @@ function CustomDrawerContent(props) {
           paddingVertical: 10,
         }}
       >
-        <Image
+  <Image
           source={{
-            uri: "http://www.github.com/jao905.png",
+            uri: "https://avatars.githubusercontent.com/u/181650606?v=4",
           }}
           style={{ width: 100, height: 100, borderRadius: 100 }}
         />
