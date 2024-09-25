@@ -38,22 +38,22 @@ export default function App() {
       <Text style={styles.title}>Aplicativo Pronto para Usar</Text>
 
       <View style={styles.inputbox}>
-        <Ionicons name="mail-open-outline" size={20} color="purple" />
+        <Ionicons name="mail-open-outline" size={20} color="white" />
         <TextInput
           style={styles.emailinput}
           placeholder="E-mail"
-          placeholderTextColor="purple"
+          placeholderTextColor="white"
           value={email}
           onChangeText={setEmail}
         />
       </View>
 
       <View style={styles.inputbox}>
-        <Ionicons name="lock-closed-outline" size={20} color="purple" />
+        <Ionicons name="lock-closed-outline" size={20} color="white" />
         <TextInput
           style={styles.emailinput}
           placeholder="Senha"
-          placeholderTextColor="purple"
+          placeholderTextColor="white"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={passwordVisibility}
@@ -61,7 +61,7 @@ export default function App() {
         <Ionicons
           name={passwordVisibility ? "eye-off-outline" : "eye-outline"}
           size={20}
-          color="purple"
+          color="white"
           onPress={togglePasswordVisibility}
         />
       </View>
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "bold",
     fontSize: 20,
-    color: "purple", 
+    color: "white", 
   },
   inputbox: {
     flexDirection: "row",
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "regular",
     fontSize: 20,
-    color: "purple", 
+    color: "white", 
   },
   button: {
     width: "100%",
