@@ -14,7 +14,7 @@ export default function About() {
       <Text style={styles.text}>
         Me chamo Arthur Beck Brasiliense, matriculado na Etec Prof. Milton Gazzetti e estou realizando este projeto com base nas atividades do professor Graziani, sendo o assunto deste aplicativo periféricos.
       </Text>  
-      <Button title="Voltar" onPress={() => { router.replace("/") }} color="green" /> 
+      <Button title="Voltar" onPress={() => { router.back() }} color="green" /> 
     </View>
   );
 }

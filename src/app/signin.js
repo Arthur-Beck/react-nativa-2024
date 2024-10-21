@@ -71,7 +71,7 @@ export default function App() {
         title="Entrar"
         onPress={handleEntrarSuper}
       />
-      <Button color="green" title="Sobre" onPress={() => router.push("/about")} />
+      <Button color="green" title="Sobre" onPress={() => router.push("about")} />
       <Button 
         color="green"
         title="Sair do Aplicativo"
