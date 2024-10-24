@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useUsersDatabase } from "../../database/useUsersDatabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { ActivityIndicator, View, Text } from "react-native";
-import {router } from "expo-router";
+import { router } from "expo-router";
 
 const AuthContext = createContext({});
 
@@ -14,7 +14,7 @@ export const Role = {
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState({
-    authenticated: null,
+    authenticated: false,
     user: null,
     role: null,
   });
@@ -64,19 +64,12 @@ export function AuthProvider({ children }) {
   const signOut = async () => {
     await AsyncStorage.removeItem("@paymnet:user");
     router.back("/");
-    setUser({});
+    setUser({
+      authenticated: false,
+      user: null,
+      role: null,
+    });
   };
-
-  if (user?.authenticated === null) {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={{ fontSize: 28, marginTop: 15 }}>
-          Caregando Dados do Usuário
-        </Text>
-        <ActivityIndicator size="large" color="#000000" />
-      </View>
-    );
-  }
 
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>

@@ -29,7 +29,7 @@ export default function App() {
       
     } catch (error) {
       Alert.alert("Erro", error.message); 
-      console.log(error);
+      console.log(error);j
     }
   };
 
